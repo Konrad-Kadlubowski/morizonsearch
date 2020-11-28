@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20201128 23:25:55.533" generator="Robot 3.0.4 (Python 2.7.11 on win32)">
+<suite source="C:\Users\kadlukon\PycharmProjects\test_konrad\venv\robot\tests\apartment_search.robot" id="s1" name="Apartment Search">
+<kw type="setup" name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open chrome on morizon page</arg>
+<arg>AND</arg>
+<arg>Agree to cookies</arg>
+</arguments>
+<kw name="Open chrome on morizon page" library="morizon_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://www.morizon.pl/</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20201128 23:25:55.787" level="INFO">Opening browser 'chrome' to base url 'https://www.morizon.pl/'.</msg>
+<status status="PASS" endtime="20201128 23:26:04.998" starttime="20201128 23:25:55.787"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:04.998" starttime="20201128 23:25:55.786"></status>
+</kw>
+<kw name="Agree to cookies" library="morizon_keywords">
+<kw name="Click on agree" library="cookies_agreement">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${AGREE_BUTTON}</arg>
+</arguments>
+<status status="PASS" endtime="20201128 23:26:05.021" starttime="20201128 23:26:04.999"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${AGREE_BUTTON}</arg>
+</arguments>
+<msg timestamp="20201128 23:26:05.022" level="INFO">Clicking button 'xpath=//*[contains(text(), 'ZGADZAM SIĘ')]'.</msg>
+<status status="PASS" endtime="20201128 23:26:05.170" starttime="20201128 23:26:05.021"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:05.170" starttime="20201128 23:26:04.999"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:05.170" starttime="20201128 23:26:04.998"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:05.170" starttime="20201128 23:25:55.786"></status>
+</kw>
+<test id="s1-t1" name="Apartment Search">
+<kw name="When I choose Wroclaw as a City the flat is located in" library="morizon_keywords">
+<kw name="Click on search text field" library="search_bar">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_TEXTFIELD}</arg>
+</arguments>
+<msg timestamp="20201128 23:26:05.172" level="INFO">Clicking element 'xpath=//*[@id="ps_location_text"]'.</msg>
+<status status="PASS" endtime="20201128 23:26:05.262" starttime="20201128 23:26:05.171"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:05.262" starttime="20201128 23:26:05.171"></status>
+</kw>
+<kw name="Type city" library="search_bar">
+<arguments>
+<arg>${city}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_TEXTFIELD}</arg>
+<arg>${CITY}</arg>
+</arguments>
+<msg timestamp="20201128 23:26:05.265" level="INFO">Typing text 'Wroclaw' into text field 'xpath=//*[@id="ps_location_text"]'.</msg>
+<status status="PASS" endtime="20201128 23:26:05.374" starttime="20201128 23:26:05.263"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:05.374" starttime="20201128 23:26:05.263"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:05.374" starttime="20201128 23:26:05.171"></status>
+</kw>
+<kw name="And I choose price range from 200000 to 250000" library="morizon_keywords">
+<kw name="Click on price range" library="search_bar">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${PRICE_RANGE_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20201128 23:26:05.378" level="INFO">Clicking element 'xpath=//*[@id="ps_price"]/div/span[@class="default"]'.</msg>
+<status status="PASS" endtime="20201128 23:26:05.469" starttime="20201128 23:26:05.378"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:05.470" starttime="20201128 23:26:05.377"></status>
+</kw>
+<kw name="Enter minimum price" library="search_bar">
+<arguments>
+<arg>${min}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${PRICE_RANGE_MIN_TEXTFIELD}</arg>
+</arguments>
+<msg timestamp="20201128 23:26:05.471" level="INFO">Clicking element 'xpath=//*[@id="ps_price_from"]'.</msg>
+<status status="PASS" endtime="20201128 23:26:05.545" starttime="20201128 23:26:05.471"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PRICE_RANGE_MIN_TEXTFIELD}</arg>
+<arg>${min_price}</arg>
+</arguments>
+<msg timestamp="20201128 23:26:05.546" level="INFO">Typing text '200000' into text field 'xpath=//*[@id="ps_price_from"]'.</msg>
+<status status="PASS" endtime="20201128 23:26:05.677" starttime="20201128 23:26:05.545"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:05.677" starttime="20201128 23:26:05.470"></status>
+</kw>
+<kw name="Enter maximum price" library="search_bar">
+<arguments>
+<arg>${max}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${PRICE_RANGE_MAX_TEXTFIELD}</arg>
+</arguments>
+<msg timestamp="20201128 23:26:05.679" level="INFO">Clicking element 'xpath=//*[@id="ps_price_to"]'.</msg>
+<status status="PASS" endtime="20201128 23:26:05.751" starttime="20201128 23:26:05.679"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PRICE_RANGE_MAX_TEXTFIELD}</arg>
+<arg>${max_price}</arg>
+</arguments>
+<msg timestamp="20201128 23:26:05.752" level="INFO">Typing text '250000' into text field 'xpath=//*[@id="ps_price_to"]'.</msg>
+<status status="PASS" endtime="20201128 23:26:05.861" starttime="20201128 23:26:05.752"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:05.861" starttime="20201128 23:26:05.678"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:05.861" starttime="20201128 23:26:05.375"></status>
+</kw>
+<kw name="And I click search button" library="morizon_keywords">
+<kw name="Click on search button" library="search_bar">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_BUTTON}</arg>
+</arguments>
+<msg timestamp="20201128 23:26:05.863" level="INFO">Clicking element 'xpath=//*[@class="submitKey"]'.</msg>
+<status status="PASS" endtime="20201128 23:26:10.018" starttime="20201128 23:26:05.863"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:10.018" starttime="20201128 23:26:05.862"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:10.018" starttime="20201128 23:26:05.862"></status>
+</kw>
+<kw name="And I open first offer" library="morizon_keywords">
+<kw name="Click on first offer" library="results_list">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${FIRST_OFFER}</arg>
+</arguments>
+<status status="PASS" endtime="20201128 23:26:10.043" starttime="20201128 23:26:10.021"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${FIRST_OFFER}</arg>
+</arguments>
+<msg timestamp="20201128 23:26:10.044" level="INFO">Clicking element 'xpath=//div[@class="row row--property-list"][1]//div[@class="row row--property-list"]'.</msg>
+<status status="PASS" endtime="20201128 23:26:11.799" starttime="20201128 23:26:10.044"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:11.799" starttime="20201128 23:26:10.020"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:11.800" starttime="20201128 23:26:10.020"></status>
+</kw>
+<kw name="Then The offer is opened" library="morizon_keywords">
+<kw name="Verify if single result page is opened" library="result_page">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Informacje szczegółowe</arg>
+</arguments>
+<msg timestamp="20201128 23:26:12.301" level="INFO">Current page contains text 'Informacje szczegółowe'.</msg>
+<status status="PASS" endtime="20201128 23:26:12.301" starttime="20201128 23:26:11.801"></status>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<doc>Verifies the current page does not contain ``text``.</doc>
+<arguments>
+<arg>oferty sprzedaży</arg>
+</arguments>
+<msg timestamp="20201128 23:26:12.853" level="INFO">Current page does not contain text 'oferty sprzedaży'.</msg>
+<status status="PASS" endtime="20201128 23:26:12.853" starttime="20201128 23:26:12.302"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:12.854" starttime="20201128 23:26:11.801"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:12.854" starttime="20201128 23:26:11.800"></status>
+</kw>
+<kw name="And Price is in range from 200000 to 250000" library="morizon_keywords">
+<kw name="Get offer price" library="result_page">
+<assign>
+<var>${actual_price}</var>
+</assign>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${PRICE}</arg>
+</arguments>
+<assign>
+<var>${offer_price}</var>
+</assign>
+<msg timestamp="20201128 23:26:12.901" level="INFO">${offer_price} = 249 900 zł</msg>
+<status status="PASS" endtime="20201128 23:26:12.901" starttime="20201128 23:26:12.856"></status>
+</kw>
+<kw name="Remove String Using Regexp" library="String">
+<doc>Removes ``patterns`` from the given ``string``.</doc>
+<arguments>
+<arg>${offer_price}</arg>
+<arg>[^0-9]</arg>
+</arguments>
+<assign>
+<var>${offer_price}</var>
+</assign>
+<msg timestamp="20201128 23:26:12.902" level="INFO">${offer_price} = 249900</msg>
+<status status="PASS" endtime="20201128 23:26:12.903" starttime="20201128 23:26:12.902"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${offer_price}</arg>
+</arguments>
+<assign>
+<var>${offer_price}</var>
+</assign>
+<msg timestamp="20201128 23:26:12.904" level="INFO">${offer_price} = 249900</msg>
+<status status="PASS" endtime="20201128 23:26:12.904" starttime="20201128 23:26:12.903"></status>
+</kw>
+<msg timestamp="20201128 23:26:12.904" level="INFO">${actual_price} = 249900</msg>
+<status status="PASS" endtime="20201128 23:26:12.904" starttime="20201128 23:26:12.856"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${min} &lt; ${actual_price} &lt; ${max}</arg>
+</arguments>
+<status status="PASS" endtime="20201128 23:26:12.905" starttime="20201128 23:26:12.904"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:12.905" starttime="20201128 23:26:12.855"></status>
+</kw>
+<kw type="teardown" name="Go to morizon main page" library="morizon_keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>https://www.morizon.pl/</arg>
+</arguments>
+<msg timestamp="20201128 23:26:12.908" level="INFO">Opening url 'https://www.morizon.pl/'</msg>
+<status status="PASS" endtime="20201128 23:26:14.071" starttime="20201128 23:26:12.908"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:14.071" starttime="20201128 23:26:12.906"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:14.072" critical="yes" starttime="20201128 23:26:05.170"></status>
+</test>
+<kw type="teardown" name="Default teardown" library="morizon_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20201128 23:26:16.531" starttime="20201128 23:26:14.076"></status>
+</kw>
+<status status="PASS" endtime="20201128 23:26:16.532" starttime="20201128 23:26:14.076"></status>
+</kw>
+<doc>This suite contains only one test which werify if searching feature on morizon website
+works given city and price criteria</doc>
+<status status="PASS" endtime="20201128 23:26:16.532" starttime="20201128 23:25:55.536"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Apartment Search" pass="1">Apartment Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
